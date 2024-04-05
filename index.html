@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const Book = (props) => {
+            return React.createElement('div', {}, [
+            React.createElement('h2', {}, props.name),
+            React.createElement('p', {}, props.year),
+            React.createElement('p', {}, props.price),
+            ])
+        }
+        const App = () => {
+            return React.createElement('div', {}, [
+            React.createElement('h1', {id: 'hello', className: 'class1' }, 'Hello from React'),
+            React.createElement(Book, {name: 'Alice in Wonderland', year: '1997', price: '550'}),
+            React.createElement(Book, {name: 'Lord of the Rings', year: '2002', price: '1200'}),
+            React.createElement(Book, {name: 'Harry Potter', year: '1999', price: '700'}),          
+            ])
+        }
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+		root.render(React.createElement(App));
+    </script>
+</body>
+
+<!-- JSX -->
+<!-- import { createRoot } from "react-dom/client";
+import React from "react";
+
+const rootElement = createRoot(document.getElementById("root"));
+
+const Book = (props) => {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <p>{props.year}</p>
+      <p>{props.price}</p>
+    </div>
+  );
+};
+const App = () => {
+  return (
+    <div>
+      <Book name="Alice in Wonderland" year="1997" price="550" />
+      <Book name="test11" year="1992" price="550" />
+      <Book name="test" year="1944" price="522" />
+    </div>
+  );
+};
+
+rootElement.render(React.createElement(App)); -->
+
+</html>
